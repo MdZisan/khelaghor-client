@@ -26,7 +26,7 @@ const Header = () => {
       <li><Link to='/'>All Toys</Link></li>
      { user &&
        <><li><Link to='/'>My Toys</Link></li>
-       <li><Link to='/'>Add A Toy</Link></li>
+       <li><Link to='/addtoy'>Add A Toy</Link></li>
        </>
      }
       <li><Link to='/blogs'>Blogs</Link></li>
@@ -40,9 +40,9 @@ const Header = () => {
     <ul className="menu menu-horizontal px-1">
       <li><Link to='/'>Home</Link></li>
       <li><Link to='/'>All Toys</Link></li>
-      { user &&
+      { //user &&
        <><li><Link to='/'>My Toys</Link></li>
-       <li><Link to='/'>Add A Toy</Link></li>
+       <li><Link to='/addtoy'>Add A Toy</Link></li>
        </>
      }
       <li><Link to='/blogs'>Blogs</Link></li>

@@ -4,6 +4,7 @@ import MainLayout from "../Layouts/MainLayout";
 import Login from "../Components/Login/Login";
 import Register from "../Components/Register/Register";
 import Blogs from "../Components/Blogs/Blogs";
+import AddToy from "../Components/Toys/AddToy/AddToy";
 
 
 const Routes = createBrowserRouter([
@@ -24,6 +25,10 @@ const Routes = createBrowserRouter([
             {
                 path:'blogs',
                 element:<Blogs></Blogs>
+            },
+            {
+                path:'addtoy',
+                element:<AddToy></AddToy>
             }
 
         ]
