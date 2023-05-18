@@ -3,21 +3,26 @@ import AllToyCard from './AllToyCard';
 
 const AllToys = () => {
     const [order,setOrder] = useState(false);
-    const [toys,setToys] =useState([])
+    const [toys,setToys] =useState([]);
+    const [limit,setLimit] = useState(20)
 
     useEffect(()=>{
-            fetch(`http://localhost:5000/alltoys/${order}`)
+            fetch(`http://localhost:5000/alltoys/${order}?limit=${limit}`)
             .then(res=>res.json())
             .then(data=>setToys(data))
 
 
 
-    },[order])
-console.log(toys);
+    },[order,limit])
+
 
 const sort=()=>{
     setOrder(!order)
 }
+const limits = ()=>{
+    setLimit(0)
+}
+console.log(toys);
 
     return (
         <div className='  md:p-16'>
@@ -35,7 +40,9 @@ const sort=()=>{
                     ></AllToyCard>)
                 }
             </div>
-           
+           <div className='text-center'>
+           {toys.length >= 20 || <button className="btn" onClick={limits}>See ALL</button>}
+           </div>
         </div>
     );
 };
