@@ -99,7 +99,7 @@ const handleLogin =(event)=>{
           <hr />
           <div className="form-control mt-3">
             <h2 className='text-center font-bold mb-2'>New here?</h2>
-          <button className="btn btn-secondary m-2" ><Link to='/register'>Register</Link></button>
+          <button className="btn btn-error text-white hover:bg-red-600 m-2" ><Link to='/register'>Register</Link></button>
         </div>
           </div>
         </div>
