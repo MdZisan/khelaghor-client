@@ -25,6 +25,7 @@ const AddToy = () => {
 
 
   const {
+    reset ,
     register,
     handleSubmit,
     watch,
@@ -32,8 +33,9 @@ const AddToy = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    data.category= selectedOption;
-    data.rating= selectedRating
+  
+    data.category= selectedOption.value;
+    data.rating= selectedRating.value;
     console.log(data);
 
     fetch('http://localhost:5000/addtoy',{
@@ -41,6 +43,14 @@ const AddToy = () => {
         headers:{'content-type':'application/json'},
         body:JSON.stringify(data)
     })
+    .then(res=>res.json())
+    .then(data=>{
+        if(data.insertedId){
+            alert('toy added')
+            reset();
+        }
+        
+        console.log(data)})
    
   };
 
