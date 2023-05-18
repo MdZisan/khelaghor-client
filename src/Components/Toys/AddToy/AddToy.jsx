@@ -97,7 +97,7 @@ const AddToy = () => {
               <input required
                 value={user?.displayName}
                 type="text"
-                placeholder="Seller Name"
+                placeholder="Seller Name "
                 className="input input-bordered"
                 {...register("sellerName", { required: true })}
               />
