@@ -1,5 +1,8 @@
 import React from 'react';
 
+
+
+
 const AllToyCard = ({toy}) => {
 
     const {_id,toyphoto,name,sellerName,category,price,quantity}  =toy

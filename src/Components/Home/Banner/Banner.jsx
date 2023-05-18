@@ -15,10 +15,10 @@ const Banner = () => {
     <div className='md:ml-14'>
       <h1 className="text-5xl font-bold uppercase">The ultimate destination for kids toys and games.</h1>
       <p className="py-6 mr-10 font-semibold"> BUY - SELL - SPREAD HAPPINESS </p>
-      <Link to={'/login'}>
+      <Link to={'/alltoys'}>
 
 
-      <button className="btn ">SPREAD HAPPINESS</button>
+      <button className="btn ">BUY HAPPINESS</button>
       </Link>
     </div>
   </div>

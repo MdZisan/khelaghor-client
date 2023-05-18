@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import AllToyCard from './AllToyCard';
+import { useLocation } from 'react-router-dom';
+
+
 
 const AllToys = () => {
     const [order,setOrder] = useState(false);
     const [toys,setToys] =useState([]);
     const [limit,setLimit] = useState(20)
+
+
 
     useEffect(()=>{
             fetch(`http://localhost:5000/alltoys/${order}?limit=${limit}`)
@@ -22,7 +27,7 @@ const sort=()=>{
 const limits = ()=>{
     setLimit(0)
 }
-console.log(toys);
+// console.log(toys);
 
     return (
         <div className='  md:p-16'>
