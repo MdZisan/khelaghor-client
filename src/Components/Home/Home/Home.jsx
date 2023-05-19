@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Header from '../../SharedPages/Header/Header';
 import { Outlet, useLocation } from 'react-router-dom';
 import Banner from '../Banner/Banner';
+import CategoryTab from '../CategoryTab/CategoryTab';
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
     return (
         <>
            <Banner></Banner>
+           <CategoryTab></CategoryTab>
         </>
     );
 };
