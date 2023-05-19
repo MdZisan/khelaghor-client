@@ -13,10 +13,11 @@ const CategoryTab = () => {
       });
   }, [category]);
 
-  console.log(toys);
+//   console.log(toys);
 
   return (
     <div className="bg-slate-100 md:p-4 md:mx-5 md:rounded-2xl md:my-4">
+       
         <h2 className="text-center text-3xl font-bold pb-3">Category</h2>
       <div className="grid grid-cols-1 md:grid-cols-4 w-1/2  mx-auto my-3 space-y-3 md:space-y-0">
         <p className={`btn w-5/6 bg-slate-500 ${category==="marvel" && 'bg-slate-900'}`} onClick={() => setCategory("marvel")}>
@@ -38,6 +39,7 @@ const CategoryTab = () => {
 
 
       </div>
+    
     </div>
   );
 };
