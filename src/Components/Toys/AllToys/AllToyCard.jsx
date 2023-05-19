@@ -1,5 +1,6 @@
 import React from 'react';
 import LazyLoad from 'react-lazy-load';
+import { Link } from 'react-router-dom';
 
 
 
@@ -10,6 +11,11 @@ const AllToyCard = ({toy}) => {
 
     return (
         <>   
+      
+
+{/* --------------------------------------------------- */}
+
+{/* card  */}
          <div className="card w-96 bg-base-100 shadow-xl my-5 ">
   <figure>
 
@@ -26,7 +32,7 @@ const AllToyCard = ({toy}) => {
    <p className='text-xl font-semibold'>Category: {category}</p>
    <p className='text-xl font-semibold'>seller: {sellerName}</p>
     <div className="card-actions justify-start mt-4">
-      <button className="btn">View Details button</button>
+      <Link to={`/toy/${_id}`} className="btn">View Details</Link>
     </div>
   </div>
 </div>   
