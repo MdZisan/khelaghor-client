@@ -1,13 +1,15 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
+import { Toaster, toast } from 'react-hot-toast';
+import Swal from 'sweetalert2';
 
 const MyToy = () => {
 
     const {user} = useContext(AuthContext)
 
     const [loadedToy,setLoadedToys]=useState([]);
-    const [toys,setToys] =useState(loadedToy)
+    
 
 
 
@@ -18,11 +20,58 @@ useEffect(()=>{
 },[user])
     
 // console.log(loadedToy);
+const handleDelete = (id)=>{
 
+// console.log(id);
+Swal.fire({
+  title: 'Are you sure?',
+  text: "You won't be able to revert this!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Yes, delete it!'
+}).then((result) => {
+  if (result.isConfirmed) {
+
+
+    fetch(`http://localhost:5000/deleteToy/${id}`,{
+      method:'DELETE'
+    })
+  .then(res=>res.json())
+  .then(data=>{
+    console.log(data);
+  if(data.deletedCount>0){
+  
+    Swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+    const remining = loadedToy.filter(toy=> toy._id !== id);
+    setLoadedToys(remining)
+  }
+  
+  
+  })
+
+    
+  }
+})
+
+
+
+
+
+
+
+
+
+}
 
     return (
         <div>
-            
+            <Toaster/>
 
 
             <div className='text-center text-2xl font-bold'>
@@ -61,7 +110,7 @@ useEffect(()=>{
                           Update
                         </Link>
                       </td>
-                      <td><button className='btn'>DELETE</button></td>
+                      <td><button className='btn' onClick={()=>handleDelete(toy._id)}>DELETE</button></td>
                     </tr>
                   </>
                 ))}
