@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AllToyCard from "./AllToyCard";
 import { Link, useLocation } from "react-router-dom";
-
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 const AllToys = () => {
   const [order, setOrder] = useState(false);
   const [toys, setToys] = useState([]);
@@ -65,9 +65,11 @@ const AllToys = () => {
           placeholder="Search Toys"
         />
       </div>
-      <div className="text-center my-2">
-        <button className="btn" onClick={sort}>
-          Sort
+      <div className="text-center my-2 ">
+        <button className="btn " onClick={sort}>
+          Sort <span className="ml-2">
+            {order?<FaArrowDown/>:<FaArrowUp/>}
+          </span>
         </button>
       </div>
       {/* card format */}
