@@ -9,12 +9,14 @@ import AllToys from "../Components/Toys/AllToys/AllToys";
 import ToyDetails from "../Components/Toys/ToyDetails/ToyDetails";
 import MyToy from "../Components/Toys/MyToy/MyToy";
 import UpdateToy from "../Components/Toys/UpdateToy/UpdateToy";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
 
 const Routes = createBrowserRouter([
     {
         path:'/',
         element:<MainLayout></MainLayout>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',

@@ -100,9 +100,9 @@ const AllToys = () => {
               </thead>
               <tbody>
                 {toys.map((toy, index) => (
-                  <>
-                    {/* row 1 */}
-                    <tr>
+                  
+                    
+                    <tr key={toy._id}>
                       <th>{index + 1}</th>
                       <td>{toy.sellerName}</td>
                       <td>{toy.name}</td>
@@ -115,7 +115,7 @@ const AllToys = () => {
                         </Link>
                       </td>
                     </tr>
-                  </>
+                  
                 ))}
               </tbody>
             </table>

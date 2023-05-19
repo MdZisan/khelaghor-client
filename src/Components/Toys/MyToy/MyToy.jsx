@@ -96,9 +96,9 @@ Swal.fire({
               </thead>
               <tbody className=''>
                 {loadedToy?.map((toy, index) => (
-                  <>
+                  
                    
-                    <tr>
+                    <tr key={toy._id}>
                       <th>{index + 1}</th>
                       <td>{toy.sellerName}</td>
                       <td>{toy.name}</td>
@@ -112,7 +112,7 @@ Swal.fire({
                       </td>
                       <td><button className='btn' onClick={()=>handleDelete(toy._id)}>DELETE</button></td>
                     </tr>
-                  </>
+                  
                 ))}
               </tbody>
             </table>
