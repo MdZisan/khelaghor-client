@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Select from 'react-select';
 import { useLocation } from "react-router-dom";
+import { Toaster, toast } from "react-hot-toast";
 
 const AddToy = () => {
  
@@ -55,7 +56,8 @@ const AddToy = () => {
     .then(res=>res.json())
     .then(data=>{
         if(data.insertedId){
-            alert('toy added')
+            toast.success('Toy added successfully')
+           
             reset();
         }
         
@@ -65,7 +67,9 @@ const AddToy = () => {
 
   return (
     <div>
+        <Toaster></Toaster>
       <h1 className="text-4xl font-bold text-center">Add Your Toy</h1>
+     
       <div className="bg-slate-200 p-10 m-6 rounded-xl">
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* register your input into the hook by invoking the "register" function */}
@@ -200,7 +204,7 @@ const AddToy = () => {
 
           </div>
           <div className="form-control mt-6">
-            <input  className="btn" type="submit" />
+            <input  className="btn" type="submit" value='ADD TOY'/>
           </div>
         </form>
             

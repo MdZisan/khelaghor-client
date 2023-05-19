@@ -40,7 +40,7 @@ const Header = () => {
     <ul className="menu menu-horizontal px-1">
       <li><Link to='/'>Home</Link></li>
       <li><Link to='/alltoys'>All Toys</Link></li>
-      { //user &&
+      { user &&
        <><li><Link to='/'>My Toys</Link></li>
        <li><Link to='/addtoy'>Add A Toy</Link></li>
        </>

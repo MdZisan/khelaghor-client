@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyLoad from 'react-lazy-load';
 
 
 
@@ -10,7 +11,13 @@ const AllToyCard = ({toy}) => {
     return (
         <>   
          <div className="card w-96 bg-base-100 shadow-xl my-5 ">
-  <figure><img src={toyphoto} alt="Shoes" /></figure>
+  <figure>
+
+    <LazyLoad>
+
+    <img src={toyphoto} alt="Shoes" />
+    </LazyLoad>
+    </figure>
   <div className="card-body">
     <h2 className="card-title text-2xl font-bold">{name}</h2>
     <hr />
