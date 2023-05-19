@@ -1,6 +1,7 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import {  useLoaderData } from 'react-router-dom';
 import { useForm } from "react-hook-form";
+import { Toaster, toast } from 'react-hot-toast';
 const UpdateToy = () => {
     const loadedToy = useLoaderData();
     const {_id,toyphoto,name,sellerName,category,price,quantity,details,email,rating} = loadedToy
@@ -11,6 +12,8 @@ const UpdateToy = () => {
 
         const onSubmit = (data) =>{
 
+            data.price=parseInt(data.price)
+
             fetch(`http://localhost:5000/updateData/${_id}`,{
                 method:"PUT",
                 headers:{'content-type':'application/json'},
@@ -19,7 +22,11 @@ const UpdateToy = () => {
             .then(res=>res.json())
       .then(data=>{
         console.log(data);
-            
+
+        if(data.modifiedCount>0){
+          toast.success('product updated');
+         
+        }
             })
 
 
@@ -34,6 +41,7 @@ const UpdateToy = () => {
 
     return (
         <div>
+          <Toaster></Toaster>
             <h1 className='text-center text-2xl font-semibold'>Update your Toy named: <span className='underline'>{name}</span> </h1>
 
 

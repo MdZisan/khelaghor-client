@@ -46,6 +46,7 @@ const AddToy = () => {
   
     data.category= selectedOption.value;
     data.rating= selectedRating.value;
+    data.price=parseInt(data.price)
     console.log(data);
 
     fetch('http://localhost:5000/addtoy',{
