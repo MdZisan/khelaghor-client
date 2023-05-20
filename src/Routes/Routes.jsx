@@ -10,6 +10,7 @@ import ToyDetails from "../Components/Toys/ToyDetails/ToyDetails";
 import MyToy from "../Components/Toys/MyToy/MyToy";
 import UpdateToy from "../Components/Toys/UpdateToy/UpdateToy";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import PrivateRoutes from "./PrivateRoutes";
 
 
 const Routes = createBrowserRouter([
@@ -34,20 +35,20 @@ const Routes = createBrowserRouter([
             },
             {
                 path:'addtoy',
-                element:<AddToy></AddToy>
+                element:<PrivateRoutes><AddToy></AddToy></PrivateRoutes>
             },{
                 path:'alltoys',
                 element:<AllToys></AllToys>
             },{
                 path:'toy/:id',
-                element:<ToyDetails></ToyDetails>,
+                element:<PrivateRoutes><ToyDetails></ToyDetails></PrivateRoutes>,
                 loader:({params})=>fetch(`https://khelaghor-server.vercel.app/toy/${params.id}`)
             },{
                 path:'mytoy',
-                element:<MyToy></MyToy>
+                element:<PrivateRoutes><MyToy></MyToy></PrivateRoutes>
             },{
                 path:'updateToy/:id',
-                element:<UpdateToy></UpdateToy>,
+                element:<PrivateRoutes><UpdateToy></UpdateToy></PrivateRoutes>,
                 loader:({params})=>fetch(`https://khelaghor-server.vercel.app/toy/${params.id}`)
             }
 

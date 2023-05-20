@@ -1,5 +1,5 @@
 import React from 'react';
-import {  useLoaderData } from 'react-router-dom';
+import {  Navigate, useLoaderData } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { Toaster, toast } from 'react-hot-toast';
 const UpdateToy = () => {
@@ -25,6 +25,8 @@ const UpdateToy = () => {
 
         if(data.modifiedCount>0){
           toast.success('product updated');
+
+          return <Navigate to={'/mytoy'}></Navigate>
          
         }
             })
@@ -108,7 +110,7 @@ const UpdateToy = () => {
 
           </div>
           <div className="form-control mt-6">
-            <input  className="btn" type="submit" value='ADD TOY'/>
+            <input  className="btn" type="submit" value='Update TOY'/>
           </div>
         </form>
             

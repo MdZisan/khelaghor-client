@@ -11,7 +11,7 @@ const PhotoGallery = () => {
         .then(data=>setImages(data))
     },[])
 
-console.log(images);
+// console.log(images);
 
     return (
         <div>

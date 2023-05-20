@@ -76,13 +76,13 @@ Swal.fire({
 
             <div className='text-center text-2xl font-bold'>
             <h2>MY TOY</h2>
-            <h1>Total added toy: </h1>
+            <h1>Total added toy: {loadedToy?.length} </h1>
             </div>
             <div>
           <div className="overflow-x-auto">
             <table className="table w-full">
               {/* head */}
-              <thead>
+              <thead  className="text-center">
                 <tr>
                   <th>No.</th>
                   <th>Seller</th>
@@ -94,7 +94,7 @@ Swal.fire({
                   <th>Delete</th>
                 </tr>
               </thead>
-              <tbody className=''>
+              <tbody  className="text-center">
                 {loadedToy?.map((toy, index) => (
                   
                    

@@ -67,7 +67,7 @@ const AllToys = () => {
       </div>
       <div className="text-center my-2 ">
         <button className="btn " onClick={sort}>
-          Sort <span className="ml-2">
+          Sort by price <span className="ml-2">
             {order?<FaArrowDown/>:<FaArrowUp/>}
           </span>
         </button>
@@ -87,28 +87,36 @@ const AllToys = () => {
           <div className="overflow-x-auto">
             <table className="table w-full">
               {/* head */}
-              <thead>
+              <thead  className="text-center">
                 <tr>
                   <th>No.</th>
                   <th>Seller</th>
+                  <th>Photo</th>
                   <th>Toy Name</th>
                   <th>Sub-category</th>
-                  <th>Price</th>
+                  <th className="flex items-center">Price  <span className="ml-1">
+            {order?<FaArrowDown/>:<FaArrowUp/>}
+          </span></th>
                   <th>Available Quantity</th>
                   <th>View Details</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody   className="text-center">
                 {toys.map((toy, index) => (
                   
                     
                     <tr key={toy._id}>
                       <th>{index + 1}</th>
                       <td>{toy.sellerName}</td>
-                      <td>{toy.name}</td>
+                      <td><div className="avatar">
+  <div className="w-28 mask mask-squircle">
+    <img src={toy.toyphoto}alt="Tailwind-CSS-Avatar-component" />
+  </div>
+</div></td>
+                      <td className="font-semibold">{toy.name}</td>
                       <td>{toy.category}</td>
-                      <td>${toy.price}</td>
-                      <td>{toy.quantity}</td>
+                      <td className="font-semibold text-lg text-success">${toy.price}</td>
+                      <td className="text-error">{toy.quantity}</td>
                       <td>
                         <Link to={`/toy/${toy._id}`} className="btn">
                           Details
