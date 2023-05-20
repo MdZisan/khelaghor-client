@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import Header from '../Components/SharedPages/Header/Header';
 import { Outlet, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import Footer from '../Components/SharedPages/Footer/Footer';
 import { Toaster } from 'react-hot-toast';
+import Loading from '../Components/Loading/Loading';
 // ..
 AOS.init();
 
@@ -20,7 +21,9 @@ const MainLayout = () => {
         <>
         <Toaster></Toaster>
             <Header></Header>
+            <Suspense fallback={<div><Loading></Loading></div>}>
             <Outlet></Outlet>
+            </Suspense>
             <Footer></Footer>
         
         </>

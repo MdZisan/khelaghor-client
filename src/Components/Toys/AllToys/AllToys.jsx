@@ -40,7 +40,7 @@ const AllToys = () => {
     //   });
   };
   // console.log(searchText);
-  console.log(toys);
+  // console.log(toys);
 
   return (
     <div className="  md:p-16">
@@ -64,7 +64,7 @@ const AllToys = () => {
           type="text"
           id=""
           onChange={(e) => setSearchText(e.target.value)}
-          className="bg-slate-100 rounded-xl  px-24 py-2"
+          className="bg-slate-100 rounded-xl px-14 md:px-24 py-2"
           placeholder="Search Toys"
         />
       </div>
@@ -78,7 +78,7 @@ const AllToys = () => {
       </div>
       {/* card format */}
       {view || (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  md:gap-5 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  md:gap-5 w-[95%] md:w-full mx-auto">
           {toys.map((toy) => (
             <AllToyCard key={toy._id} toy={toy}></AllToyCard>
           ))}

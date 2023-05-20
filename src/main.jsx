@@ -9,10 +9,10 @@ import Loading from './Components/Loading/Loading.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Suspense fallback={<div><Loading></Loading></div>}>
+   
     <AuthProvider>
 <RouterProvider router={Routes}></RouterProvider>
     </AuthProvider>
-    </Suspense>
+    
   </React.StrictMode>,
 )

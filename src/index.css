@@ -11,3 +11,10 @@
   .is-visible {
     opacity: 1;
   }
+
+ *{
+  transition: all 1s ease-in-out;
+ }
+ html{
+  scroll-behavior: smooth;
+ }

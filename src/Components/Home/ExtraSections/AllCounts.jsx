@@ -12,7 +12,7 @@ const AllCounts = () => {
             <div className='bg-slate-800 text-white p-5 w-[300px] rounded-xl' >
                 <LazyLoad><p className='flex justify-center text-4xl'><FaUserAlt/></p></LazyLoad>
             <h2>TOTAL USER</h2>
-            <h2 className='flex justify-center'><LazyLoad><CountUp start={0} end={2000 } delay={2}></CountUp></LazyLoad>+</h2>
+            <h2 className='flex justify-center'><LazyLoad><CountUp start={0} end={2000 } delay={1}></CountUp></LazyLoad>+</h2>
             </div>
             
          
@@ -20,7 +20,7 @@ const AllCounts = () => {
             <div className='bg-slate-800 text-white p-5 w-[300px] rounded-xl' >
                <LazyLoad><p className='flex justify-center text-4xl'><FaShoppingBag/></p></LazyLoad>
             <h2>TOTAL PRODUCT</h2>
-            <h2 className='flex justify-center'><LazyLoad><CountUp start={0} end={45000} delay={2}></CountUp></LazyLoad>+</h2>
+            <h2 className='flex justify-center'><LazyLoad><CountUp start={0} end={45000} delay={1}></CountUp></LazyLoad>+</h2>
             </div>
             
          
@@ -28,7 +28,7 @@ const AllCounts = () => {
             <div className='bg-slate-800 text-white p-5 w-[300px] rounded-xl' >
                <LazyLoad><p className='flex justify-center text-4xl'><FaSellsy/></p></LazyLoad>
             <h2>TOTAL SELLES</h2>
-            <h2 className='flex justify-center'><LazyLoad><CountUp start={0} end={300000} delay={2}></CountUp></LazyLoad>+</h2>
+            <h2 className='flex justify-center'><LazyLoad><CountUp start={0} end={300000} delay={1}></CountUp></LazyLoad>+</h2>
             </div>
             
 
