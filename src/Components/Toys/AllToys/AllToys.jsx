@@ -10,7 +10,7 @@ const AllToys = () => {
   const [view,setView]= useState(true)
 
   useEffect(() => {
-    fetch(`http://localhost:5000/alltoys/${order}?limit=${limit}`)
+    fetch(`https://khelaghor-server.vercel.app/alltoys/${order}?limit=${limit}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [order, limit]);
@@ -23,7 +23,7 @@ const AllToys = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/alltoy/${searchText}`)
+    fetch(`https://khelaghor-server.vercel.app/alltoy/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -32,7 +32,7 @@ const AllToys = () => {
   }, [searchText]);
 
   const handleSearch = () => {
-    // fetch(`http://localhost:5000/alltoy/${searchText}`)
+    // fetch(`https://khelaghor-server.vercel.app/alltoy/${searchText}`)
     //   .then((res) => res.json())
     //   .then((data) => {
     //     console.log(data);

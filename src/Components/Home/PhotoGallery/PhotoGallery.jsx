@@ -6,7 +6,7 @@ const PhotoGallery = () => {
     const [images,setImages] =useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/toyphoto')
+        fetch('https://khelaghor-server.vercel.app/toyphoto')
         .then(res=>res.json())
         .then(data=>setImages(data))
     },[])

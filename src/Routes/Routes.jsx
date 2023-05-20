@@ -41,14 +41,14 @@ const Routes = createBrowserRouter([
             },{
                 path:'toy/:id',
                 element:<ToyDetails></ToyDetails>,
-                loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+                loader:({params})=>fetch(`https://khelaghor-server.vercel.app/toy/${params.id}`)
             },{
                 path:'mytoy',
                 element:<MyToy></MyToy>
             },{
                 path:'updateToy/:id',
                 element:<UpdateToy></UpdateToy>,
-                loader:({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+                loader:({params})=>fetch(`https://khelaghor-server.vercel.app/toy/${params.id}`)
             }
 
         ]

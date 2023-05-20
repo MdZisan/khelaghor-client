@@ -49,7 +49,7 @@ const AddToy = () => {
     data.price=parseInt(data.price)
     console.log(data);
 
-    fetch('http://localhost:5000/addtoy',{
+    fetch('https://khelaghor-server.vercel.app/addtoy',{
         method:'POST',
         headers:{'content-type':'application/json'},
         body:JSON.stringify(data)
