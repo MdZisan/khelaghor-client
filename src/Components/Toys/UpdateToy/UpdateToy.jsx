@@ -43,7 +43,7 @@ const UpdateToy = () => {
 
     return (
         <div>
-          <Toaster></Toaster>
+          {/* <Toaster></Toaster> */}
             <h1 className='text-center text-2xl font-semibold'>Update your Toy named: <span className='underline'>{name}</span> </h1>
 
 

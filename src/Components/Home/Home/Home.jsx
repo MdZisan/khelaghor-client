@@ -4,6 +4,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Banner from '../Banner/Banner';
 import CategoryTab from '../CategoryTab/CategoryTab';
 import PhotoGallery from '../PhotoGallery/PhotoGallery';
+import { Toaster } from 'react-hot-toast';
 
 const Home = () => {
 
@@ -16,6 +17,7 @@ const Home = () => {
 
     return (
         <>
+       
            <Banner></Banner>
            <PhotoGallery></PhotoGallery>
            <CategoryTab></CategoryTab>

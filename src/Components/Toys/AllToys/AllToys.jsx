@@ -7,7 +7,7 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [limit, setLimit] = useState(20);
   const [searchText, setSearchText] = useState("");
-  const [view,setView]= useState(true)
+  const [view, setView] = useState(true);
 
   useEffect(() => {
     fetch(`https://khelaghor-server.vercel.app/alltoys/${order}?limit=${limit}`)
@@ -39,16 +39,19 @@ const AllToys = () => {
     //     setJobs(data);
     //   });
   };
-  console.log(searchText);
-
-  // console.log(toys);
+  // console.log(searchText);
+  console.log(toys);
 
   return (
     <div className="  md:p-16">
       <div className="md:absolute right-5 flex space-x-3">
-       
         <label> switch view</label>
-        <input type="checkbox" className="toggle" checked={view} onClick={()=>setView(!view)} />
+        <input
+          type="checkbox"
+          className="toggle"
+          checked={view}
+          onClick={() => setView(!view)}
+        />
         {/* <input type="radio" name="table" className="radio" checked  onClick={()=>setView(true)}/>
         <input type="radio" name="card" className="radio" onClick={()=>setView(false)} /> */}
       </div>
@@ -67,8 +70,9 @@ const AllToys = () => {
       </div>
       <div className="text-center my-2 ">
         <button className="btn " onClick={sort}>
-          Sort by price <span className="ml-2">
-            {order?<FaArrowDown/>:<FaArrowUp/>}
+          Sort by price{" "}
+          <span className="ml-2">
+            {order ? <FaArrowDown /> : <FaArrowUp />}
           </span>
         </button>
       </div>
@@ -80,50 +84,76 @@ const AllToys = () => {
           ))}
         </div>
       )}
-
+{toys.length < 1 && (
+                  <div className="text-center">
+                    
+                    <p className="text-center text-xl text-error">
+                      MAYBE VERCEL SERVER ITS NOT RESPONDING, <br /> try to
+                      Refresh sometime <br />
+                      <button
+                        className="btn"
+                        onClick={() => {
+                          location.reload();
+                        }}
+                      >
+                        reload
+                      </button>
+                    </p>
+                  </div>
+                )}
       {/* table format */}
       {view && (
         <div>
           <div className="overflow-x-auto">
             <table className="table w-full">
               {/* head */}
-              <thead  className="text-center">
+              <thead className="text-center">
                 <tr>
                   <th>No.</th>
                   <th>Seller</th>
                   <th>Photo</th>
                   <th>Toy Name</th>
                   <th>Sub-category</th>
-                  <th className="flex items-center">Price  <span className="ml-1">
-            {order?<FaArrowDown/>:<FaArrowUp/>}
-          </span></th>
+                  <th className="flex items-center">
+                    Price{" "}
+                    <span className="ml-1">
+                      {order ? <FaArrowDown /> : <FaArrowUp />}
+                    </span>
+                  </th>
                   <th>Available Quantity</th>
                   <th>View Details</th>
                 </tr>
               </thead>
-              <tbody   className="text-center">
+              
+              <tbody className="text-center">
+                
+
                 {toys.map((toy, index) => (
-                  
-                    
-                    <tr key={toy._id}>
-                      <th>{index + 1}</th>
-                      <td>{toy.sellerName}</td>
-                      <td><div className="avatar">
-  <div className="w-28 mask mask-squircle">
-    <img src={toy.toyphoto}alt="Tailwind-CSS-Avatar-component" />
-  </div>
-</div></td>
-                      <td className="font-semibold">{toy.name}</td>
-                      <td>{toy.category}</td>
-                      <td className="font-semibold text-lg text-success">${toy.price}</td>
-                      <td className="text-error">{toy.quantity}</td>
-                      <td>
-                        <Link to={`/toy/${toy._id}`} className="btn">
-                          Details
-                        </Link>
-                      </td>
-                    </tr>
-                  
+                  <tr key={toy._id}>
+                    <th>{index + 1}</th>
+                    <td>{toy.sellerName}</td>
+                    <td>
+                      <div className="avatar">
+                        <div className="w-28 mask mask-squircle">
+                          <img
+                            src={toy.toyphoto}
+                            alt="Tailwind-CSS-Avatar-component"
+                          />
+                        </div>
+                      </div>
+                    </td>
+                    <td className="font-semibold">{toy.name}</td>
+                    <td>{toy.category}</td>
+                    <td className="font-semibold text-lg text-success">
+                      ${toy.price}
+                    </td>
+                    <td className="text-error">{toy.quantity}</td>
+                    <td>
+                      <Link to={`/toy/${toy._id}`} className="btn">
+                        Details
+                      </Link>
+                    </td>
+                  </tr>
                 ))}
               </tbody>
             </table>

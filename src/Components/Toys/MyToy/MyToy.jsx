@@ -71,13 +71,30 @@ Swal.fire({
 
     return (
         <div>
-            <Toaster/>
+            {/* <Toaster/> */}
 
 
             <div className='text-center text-2xl font-bold'>
             <h2>MY TOY</h2>
             <h1>Total added toy: {loadedToy?.length} </h1>
             </div>
+            {loadedToy.length < 1 && (
+                  <div className="text-center">
+                    
+                    <p className="text-center text-xl text-error">
+                      MAYBE VERCEL SERVER ITS NOT RESPONDING, <br /> try to
+                      Refresh sometime <br />
+                      <button
+                        className="btn"
+                        onClick={() => {
+                          location.reload();
+                        }}
+                      >
+                        reload
+                      </button>
+                    </p>
+                  </div>
+                )}
             <div>
           <div className="overflow-x-auto">
             <table className="table w-full">
@@ -86,10 +103,12 @@ Swal.fire({
                 <tr>
                   <th>No.</th>
                   <th>Seller</th>
+                  <th>Photo</th>
                   <th>Toy Name</th>
                   <th>Sub-category</th>
                   <th>Price</th>
                   <th>Available Quantity</th>
+                  <th>Details</th>
                   <th>Update</th>
                   <th>Delete</th>
                 </tr>
@@ -101,16 +120,31 @@ Swal.fire({
                     <tr key={toy._id}>
                       <th>{index + 1}</th>
                       <td>{toy.sellerName}</td>
+                      <td>
+                      <div className="avatar">
+                        <div className="w-28 mask mask-squircle">
+                          <img
+                            src={toy.toyphoto}
+                            alt="Tailwind-CSS-Avatar-component"
+                          />
+                        </div>
+                      </div>
+                    </td>
                       <td>{toy.name}</td>
                       <td>{toy.category}</td>
                       <td>${toy.price}</td>
                       <td>{toy.quantity}</td>
                       <td>
-                        <Link to={`/updateToy/${toy._id}`} className="btn">
+                      <Link to={`/toy/${toy._id}`} className="btn">
+                        Details
+                      </Link>
+                    </td>
+                      <td>
+                        <Link to={`/updateToy/${toy._id}`} className="btn btn-success text-white">
                           Update
                         </Link>
                       </td>
-                      <td><button className='btn' onClick={()=>handleDelete(toy._id)}>DELETE</button></td>
+                      <td><button className='btn btn-error text-white' onClick={()=>handleDelete(toy._id)}>DELETE</button></td>
                     </tr>
                   
                 ))}

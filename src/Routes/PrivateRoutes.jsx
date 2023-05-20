@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 
 import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider/AuthProvider";
+import { toast } from "react-hot-toast";
 
 const PrivateRoutes = ({ children }) => {
   const { user, loading } = useContext(AuthContext);
@@ -17,7 +18,12 @@ const PrivateRoutes = ({ children }) => {
   if (user) {
     return children;
   }
-  return <Navigate to={"/login"} state={{ from: location }} replace></Navigate>;
+  else{
+      toast.error('You have to log in first to view details')
+    return ( 
+    <Navigate to={"/login"} state={{ from: location }} replace></Navigate>
+    )
+  }
 };
 
 export default PrivateRoutes;

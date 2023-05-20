@@ -3,6 +3,8 @@ import Header from '../Components/SharedPages/Header/Header';
 import { Outlet, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import Footer from '../Components/SharedPages/Footer/Footer';
+import { Toaster } from 'react-hot-toast';
 // ..
 AOS.init();
 
@@ -16,8 +18,10 @@ const MainLayout = () => {
     },[pathname])
     return (
         <>
+        <Toaster></Toaster>
             <Header></Header>
             <Outlet></Outlet>
+            <Footer></Footer>
         
         </>
     );

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 const SingleCategoryTab = ({toy}) => {
-
+  
     const {toyphoto,name,price,rating,_id} = toy
 
 
@@ -19,7 +19,7 @@ const SingleCategoryTab = ({toy}) => {
     <p>Price: ${price}</p>
     <p>Rating: ${rating}</p>
     <div className="card-actions justify-start">
-    <Link to={`/toy/${_id}`} className="btn">View Details</Link>
+   <p> <Link to={`/toy/${_id}`} className="btn">View Details</Link></p>
     </div>
   </div>
 </div>

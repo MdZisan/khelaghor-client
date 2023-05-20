@@ -68,7 +68,7 @@ const AddToy = () => {
 
   return (
     <div>
-        <Toaster></Toaster>
+        {/* <Toaster></Toaster> */}
       <h1 className="text-4xl font-bold text-center">Add Your Toy</h1>
      
       <div className="bg-slate-200 p-10 m-6 rounded-xl">
