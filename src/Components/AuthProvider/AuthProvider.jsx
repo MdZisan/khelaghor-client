@@ -42,10 +42,7 @@ const googleSignIn = ()=>{
     setLoading(true);
 return signInWithPopup(auth,googleProvider);
 }
-const githubSignIn =()=>{
-    setLoading(true);
-return signInWithPopup(auth,githubProvider)
-}
+
 
 
 
@@ -63,7 +60,7 @@ useEffect(()=>{
 }, [])
 
 
-    const authInfo = {user,loading,createUser,login,googleSignIn,logout,profileUpdate,githubSignIn
+    const authInfo = {user,loading,createUser,login,googleSignIn,logout,profileUpdate
     
     }
     

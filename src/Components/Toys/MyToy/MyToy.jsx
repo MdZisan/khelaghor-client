@@ -80,7 +80,7 @@ Swal.fire({
             </div>
             {loadedToy.length < 1 && (
                   <div className="text-center">
-                    
+                     <p className='text-2xl font-bold text-success'> You didn't added any Toy <br /> OR</p>
                     <p className="text-center text-xl text-error">
                       MAYBE VERCEL SERVER ITS NOT RESPONDING, <br /> try to
                       Refresh sometime <br />
@@ -93,6 +93,7 @@ Swal.fire({
                         reload
                       </button>
                     </p>
+                   
                   </div>
                 )}
             <div>

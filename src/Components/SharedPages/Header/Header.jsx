@@ -4,6 +4,7 @@ import { TbHorseToy } from 'react-icons/tb';
 import { RxAvatar } from 'react-icons/rx';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import LazyLoad from 'react-lazy-load';
+import ActiveLink from '../ActiveLink/ActiveLink';
 
 const Header = () => {
   const {logout,user}= useContext(AuthContext);
@@ -38,14 +39,14 @@ const Header = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><Link to='/'>Home</Link></li>
-      <li><Link to='/alltoys'>All Toys</Link></li>
+      <li><ActiveLink to='/'>Home</ActiveLink></li>
+      <li><ActiveLink to='/alltoys'>All Toys</ActiveLink></li>
       { user &&
-       <><li><Link to='/mytoy'>My Toys</Link></li>
-       <li><Link to='/addtoy'>Add A Toy</Link></li>
+       <><li><ActiveLink to='/mytoy'>My Toys</ActiveLink></li>
+       <li><ActiveLink to='/addtoy'>Add A Toy</ActiveLink></li>
        </>
      }
-      <li><Link to='/blogs'>Blogs</Link></li>
+      <li><ActiveLink to='/blogs'>Blogs</ActiveLink></li>
    
     </ul>
   </div>

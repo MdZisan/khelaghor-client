@@ -7,7 +7,7 @@ const Login = () => {
   const [error,setError]=useState('')
   const location = useLocation();
   const navigate =  useNavigate()
-  const {user,login,googleSignIn,githubSignIn} = useContext(AuthContext)
+  const {user,login,googleSignIn} = useContext(AuthContext)
 // console.log(user,loading,createUser,login,googleSignIn);
 const from = location.state?.from?.pathname || '/';
 // console.log(from);
@@ -23,19 +23,7 @@ const handleGoogleSignIn =()=>{
     console.log(error.message);
   })
 }
-const handleGithubSignIn =()=>{
-  githubSignIn()
-  .then(result=>{
-    const loggedUser =  result.user;
-    console.log(loggedUser);
-    navigate(from, { replace: true })
-  })
-  .catch(error=>{
-    setError(error.message);
-    console.log(error);
 
-  })
-}
 
 
 const handleLogin =(event)=>{
@@ -92,9 +80,7 @@ const handleLogin =(event)=>{
           <div className="form-control mt-1">
              <button className="btn bg-sky-400 m-2 border-0" onClick={handleGoogleSignIn} ><Link> <span className='flex items-center gap-2'><FaGoogle></FaGoogle> Login with Google</span> </Link></button>
         </div>
-        <div className="form-control mt-3">
-             <button className="btn  m-2" onClick={handleGithubSignIn} ><Link> <span className='flex items-center gap-2'><FaGithub/> Login with Github</span> </Link></button>
-        </div>
+       
 
           <hr />
           <div className="form-control mt-3">
