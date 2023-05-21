@@ -14,7 +14,7 @@ const UpdateToy = () => {
 
             data.price=parseInt(data.price)
 
-            fetch(`https://khelaghor-server.vercel.app/updateData/${_id}`,{
+            fetch(`https://khelaghor-server-production.up.railway.app/updateData/${_id}`,{
                 method:"PUT",
                 headers:{'content-type':'application/json'},
                 body:JSON.stringify(data)

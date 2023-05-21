@@ -10,7 +10,7 @@ const AllToys = () => {
   const [view, setView] = useState(true);
 
   useEffect(() => {
-    fetch(`https://khelaghor-server.vercel.app/alltoys/${order}?limit=${limit}`)
+    fetch(`https://khelaghor-server-production.up.railway.app/alltoys/${order}?limit=${limit}`)
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [order, limit]);
@@ -23,7 +23,7 @@ const AllToys = () => {
   };
 
   useEffect(() => {
-    fetch(`https://khelaghor-server.vercel.app/alltoy/${searchText}`)
+    fetch(`https://khelaghor-server-production.up.railway.app/alltoy/${searchText}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -32,7 +32,7 @@ const AllToys = () => {
   }, [searchText]);
 
   const handleSearch = () => {
-    // fetch(`https://khelaghor-server.vercel.app/alltoy/${searchText}`)
+    // fetch(`https://khelaghor-server-production.up.railway.app/alltoy/${searchText}`)
     //   .then((res) => res.json())
     //   .then((data) => {
     //     console.log(data);
@@ -88,7 +88,7 @@ const AllToys = () => {
                   <div className="text-center">
                     
                     <p className="text-center text-xl text-error">
-                      MAYBE VERCEL SERVER ITS NOT RESPONDING, <br /> try to
+                      MAYBE SERVER ITS NOT RESPONDING, <br /> try to
                       Refresh sometime <br />
                       <button
                         className="btn"

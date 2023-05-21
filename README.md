@@ -10,3 +10,4 @@
 - its home page is responsive for large and small screen .
 -  In all toys page , it have e button to switch views between table format and card format 
 
+- we use some item to optimise and fast load website , we add react-lazy-image and react built in lazy import(dynamic import components)
