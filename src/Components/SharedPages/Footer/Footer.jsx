@@ -6,21 +6,17 @@ const Footer = () => {
            <footer className="footer p-10 bg-base-200 text-base-content">
   <div>
   <span className='ml-2 text-6xl'><TbHorseToy/></span>
-    <p className='font-semibold'><span className='font-bold text-2xl'>KHELA GHOR</span><br/>Spreding Happiness since 1992</p>
+    <p className='font-semibold'><span className='font-bold text-2xl'>KHELA GHOR</span><br/>Spreding Happiness since 1992 <br /> CopyRight © khelaghor</p>
   </div> 
   <div>
-    <span className="footer-title">Services</span> 
-    <a className="link link-hover">Buying</a> 
-    <a className="link link-hover">Selling</a> 
-    <a className="link link-hover">Marketing</a> 
-    <a className="link link-hover">Advertisement</a>
+    <span className="footer-title">Address</span> 
+  <address>Mirpur-1, <br /> Dhaka,Bangladesh</address>
   </div> 
   <div>
-    <span className="footer-title">Company</span> 
-    <a className="link link-hover">About us</a> 
-    <a className="link link-hover">Contact</a> 
-    <a className="link link-hover">Jobs</a> 
-    <a className="link link-hover">Press kit</a>
+    <span className="footer-title">Contact</span> 
+    <a className="link link-hover">Email: khelaghor@mail.com</a> 
+    <a className="link link-hover">Phone: 01000000</a> 
+  
   </div> 
   <div>
   <span className="footer-title">Social</span>
