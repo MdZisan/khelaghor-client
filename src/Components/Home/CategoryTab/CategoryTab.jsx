@@ -6,7 +6,7 @@ const CategoryTab = () => {
   const [category, setCategory] = useState("marvel");
   const [toys, setToys] = useState([]);
   useEffect(() => {
-    fetch(`https://khelaghor-server-production.up.railway.app/toys/${category}`)
+    fetch(`https://khelaghor-server.vercel.app/toys/${category}`)
       .then((res) => res.json())
       .then((data) => {
         setToys(data);

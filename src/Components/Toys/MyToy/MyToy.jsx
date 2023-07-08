@@ -14,7 +14,7 @@ const MyToy = () => {
 
 
 useEffect(()=>{
-    fetch(`https://khelaghor-server-production.up.railway.app/mytoy/${user?.email}`)
+    fetch(`https://khelaghor-server.vercel.app/mytoy/${user?.email}`)
     .then(res=>res.json())
     .then(data=>setLoadedToys(data))
 },[user])
@@ -35,7 +35,7 @@ Swal.fire({
   if (result.isConfirmed) {
 
 
-    fetch(`https://khelaghor-server-production.up.railway.app/deleteToy/${id}`,{
+    fetch(`https://khelaghor-server.vercel.app/deleteToy/${id}`,{
       method:'DELETE'
     })
   .then(res=>res.json())

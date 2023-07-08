@@ -63,14 +63,14 @@ const Routes = createBrowserRouter([
             },{
                 path:'toy/:id',
                 element:<PrivateRoutes><ToyDetails></ToyDetails></PrivateRoutes>,
-                loader:({params})=>fetch(`https://khelaghor-server-production.up.railway.app/toy/${params.id}`)
+                loader:({params})=>fetch(`https://khelaghor-server.vercel.app/toy/${params.id}`)
             },{
                 path:'mytoy',
                 element:<PrivateRoutes><MyToy></MyToy></PrivateRoutes>
             },{
                 path:'updateToy/:id',
                 element:<PrivateRoutes><UpdateToy></UpdateToy></PrivateRoutes>,
-                loader:({params})=>fetch(`https://khelaghor-server-production.up.railway.app/toy/${params.id}`)
+                loader:({params})=>fetch(`https://khelaghor-server.vercel.app/toy/${params.id}`)
             }
 
         ]
