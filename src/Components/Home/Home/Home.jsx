@@ -8,6 +8,7 @@ import { Toaster } from 'react-hot-toast';
 import Sponsers from '../ExtraSections/Sponsers';
 import AllCounts from '../ExtraSections/AllCounts';
 import Faq from '../Faq/Faq';
+import AboutUs from '../AboutUs/AboutUs';
 
 const Home = () => {
 
@@ -27,6 +28,7 @@ const Home = () => {
            <CategoryTab></CategoryTab>
            <Sponsers></Sponsers>
            <Faq/>
+           <AboutUs/>
         </>
     );
 };
