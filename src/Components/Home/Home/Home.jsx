@@ -11,6 +11,7 @@ import Faq from '../Faq/Faq';
 import AboutUs from '../AboutUs/AboutUs';
 import NewsLetter from '../NewLetter/NewsLetter';
 import Contact from '../Contact/Contact';
+import WhyChooseUsSection from '../WhyChooseUs/WhyChooseUs';
 
 const Home = () => {
 
@@ -29,6 +30,7 @@ const Home = () => {
            <AllCounts></AllCounts>
            <CategoryTab></CategoryTab>
            <NewsLetter/>
+           <WhyChooseUsSection/>
            <Sponsers></Sponsers>
            <Faq/>
            <AboutUs/>

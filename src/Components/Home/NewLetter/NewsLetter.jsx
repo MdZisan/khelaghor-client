@@ -5,8 +5,13 @@ const NewsLetter = () => {
 
     const handleSubscribe = () => {
       // You can implement your subscription logic here
+      if (!email) {
+        alert('Please enter your email address');
+        return;
+      }
       alert(`Subscribed with email ${email}`)
-      console.log(`Subscribed with email: ${email}`);
+
+    //   console.log(`Subscribed with email: ${email}`);
       // Reset the email state after subscription
       setEmail('');
     };
