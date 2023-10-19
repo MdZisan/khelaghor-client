@@ -9,6 +9,7 @@ import Sponsers from '../ExtraSections/Sponsers';
 import AllCounts from '../ExtraSections/AllCounts';
 import Faq from '../Faq/Faq';
 import AboutUs from '../AboutUs/AboutUs';
+import NewsLetter from '../NewLetter/NewsLetter';
 
 const Home = () => {
 
@@ -26,6 +27,7 @@ const Home = () => {
            <PhotoGallery></PhotoGallery>
            <AllCounts></AllCounts>
            <CategoryTab></CategoryTab>
+           <NewsLetter/>
            <Sponsers></Sponsers>
            <Faq/>
            <AboutUs/>
