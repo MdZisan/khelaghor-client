@@ -4,7 +4,7 @@ import { Tooltip } from 'react-tooltip';
 
 const PhotoGallery = () => {
     const [images,setImages] =useState([]);
-
+const [to,setTo]=useState(false)
     useEffect(()=>{
         fetch('https://khelaghor-server.vercel.app/toyphoto')
         .then(res=>res.json())
@@ -12,11 +12,13 @@ const PhotoGallery = () => {
     },[])
 
 // console.log(images);
-
+console.log(to);
     return (
         <div>
             <div>
-                <h2 className='text-3xl font-bold my-2 mb-4 text-center'>Product Gallery</h2>
+                <h2 className='text-3xl font-bold my-2 mb-4 text-center'>Product Gallery
+               
+                </h2>
                 <p className='text-center text-slate-300'>
                     <span className='hidden md:inline-block mr-2'>Hover</span>
                     <span className='md:hidden' >Tap </span>
@@ -28,10 +30,11 @@ const PhotoGallery = () => {
                 {
                     images?.map((img)=><div key={img._id}>
                    
-                   <div data-tooltip-id={img._id} className='p-2 bg-slate-700'>
+                   <div data-tooltip-id={img._id} className='p-2 md:h-[185px] bg-slate-700'>
                  <LazyLoad>
-                 <img data-aos="zoom-in" src={img.toyphoto} alt="" />
+                 <img data-aos="zoom-in" src={img.toyphoto} alt=""  />
                  </LazyLoad>
+            
                    </div>
                    <Tooltip id={img._id} className='z-50'>
   <div>

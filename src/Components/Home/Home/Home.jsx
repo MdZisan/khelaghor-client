@@ -7,6 +7,7 @@ import PhotoGallery from '../PhotoGallery/PhotoGallery';
 import { Toaster } from 'react-hot-toast';
 import Sponsers from '../ExtraSections/Sponsers';
 import AllCounts from '../ExtraSections/AllCounts';
+import Faq from '../Faq/Faq';
 
 const Home = () => {
 
@@ -25,6 +26,7 @@ const Home = () => {
            <AllCounts></AllCounts>
            <CategoryTab></CategoryTab>
            <Sponsers></Sponsers>
+           <Faq/>
         </>
     );
 };
