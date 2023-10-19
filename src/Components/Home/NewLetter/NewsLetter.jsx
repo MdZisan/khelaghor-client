@@ -27,7 +27,9 @@ const NewsLetter = () => {
             <input
               type="email"
               id="email"
-              className="block w-full px-5 py-3 border border-transparent rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:border-blue-300 focus:ring focus:ring-blue-200 transition duration-150 ease-in-out sm:max-w-xs sm:text-sm"
+              className="block w-full px-5 py-3 border border-transparent rounded-md leading-5 bg-white 
+              border-blue-300
+              placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:border-blue-300 focus:ring focus:ring-blue-200  transition duration-150 ease-in-out sm:max-w-xs sm:text-sm"
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}

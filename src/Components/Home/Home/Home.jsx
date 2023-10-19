@@ -10,6 +10,7 @@ import AllCounts from '../ExtraSections/AllCounts';
 import Faq from '../Faq/Faq';
 import AboutUs from '../AboutUs/AboutUs';
 import NewsLetter from '../NewLetter/NewsLetter';
+import Contact from '../Contact/Contact';
 
 const Home = () => {
 
@@ -31,6 +32,7 @@ const Home = () => {
            <Sponsers></Sponsers>
            <Faq/>
            <AboutUs/>
+           <Contact/>
         </>
     );
 };
