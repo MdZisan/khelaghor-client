@@ -21,7 +21,7 @@ const AllToyCard = ({toy}) => {
 
     <LazyLoad>
 
-    <img src={toyphoto} alt="Shoes" />
+    <img src={toyphoto} alt="TOys" />
     </LazyLoad>
     </figure>
   <div className="card-body">

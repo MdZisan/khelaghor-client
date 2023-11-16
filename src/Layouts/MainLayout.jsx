@@ -22,7 +22,9 @@ const MainLayout = () => {
         <Toaster></Toaster>
             <Header></Header>
             <Suspense fallback={<div><Loading></Loading></div>}>
-            <Outlet></Outlet>
+           <div className='min-h-[calc(100vh-100px)]'>
+                <Outlet></Outlet> 
+           </div>
             </Suspense>
             <Footer></Footer>
         
